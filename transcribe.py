@@ -85,4 +85,4 @@ if __name__ == '__main__':
     parser = SpectrogramParser(audio_conf, normalize=True)
 
     decoded_output, decoded_offsets = transcribe(args.audio_path, parser, model, decoder, args.cuda)
-    print(json.dumps(decode_results(model, decoded_output, decoded_offsets)))
+    print(json.dumps(decode_results(model, decoded_output, decoded_offsets), ensure_ascii=False))

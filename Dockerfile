@@ -4,7 +4,10 @@ WORKDIR /workspace/
 
 # install basics 
 RUN apt-get update -y
-RUN apt-get install -y git curl ca-certificates bzip2 cmake tree htop bmon iotop
+RUN apt-get install -y git curl ca-certificates bzip2 cmake tree htop bmon iotop locales
+RUN locale-gen en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
 
 # Install Miniconda
 RUN curl -so /miniconda.sh https://repo.continuum.io/miniconda/Miniconda3-4.4.10-Linux-x86_64.sh \
